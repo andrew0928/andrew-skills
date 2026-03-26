@@ -1,0 +1,21 @@
+{
+  "name": "andrew-architect",
+  "version": "0.1.0",
+  "description": "Claude Skills for architecture design distilled from Andrew Wu's published articles",
+  "author": {
+    "name": "Andrew Wu",
+    "email": "chicken@chicken-house.net",
+    "url": "https://columns.chicken-house.net"
+  },
+  "homepage": "https://columns.chicken-house.net",
+  "license": "MIT",
+  "keywords": [
+    "architecture",
+    "software-architecture",
+    "api",
+    "microservices",
+    "security",
+    "slo",
+    "design"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "andrew-architect-skills",
+  "owner": {
+    "name": "Andrew Wu",
+    "url": "https://columns.chicken-house.net"
+  },
+  "plugins": [
+    {
+      "name": "andrew-architect",
+      "source": "./",
+      "description": "Claude Skills for architecture design distilled from Andrew Wu's published articles",
+      "version": "0.1.0"
+    }
+  ]
+}
