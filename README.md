@@ -62,3 +62,11 @@ skills/
 - `agents/overview.yaml` 保留給人類讀者與其他工具的摘要資訊。
 - `README.md` 負責快速導覽，不影響 skill 執行。
 - `references/` 保留文章脈絡與補充原則，避免把所有細節塞回主 skill。
+
+## 授權
+
+除非另有註明，本 repo 內容採用 [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) 授權條款釋出。
+
+- 使用者可重製、散布、改作，並可商業使用
+- 使用時需保留出處、附上授權連結，並標示是否有修改
+- 詳細條款請見 [LICENSE.md](LICENSE.md)
