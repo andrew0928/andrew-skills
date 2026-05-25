@@ -1,5 +1,5 @@
 ---
-name: andrew-security-permission-design
+name: security-permission-design
 description: "Design Andrew-style authentication, authorization, permission, and trust-boundary mechanisms for applications and APIs. Use when Codex needs security-by-design thinking, token or key-based trust models, permission-system architecture, RBAC or policy design, anti-replay and signature choices, multi-tenant authorization boundaries, or operational enforcement and audit considerations."
 ---
 

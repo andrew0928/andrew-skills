@@ -1,5 +1,5 @@
 ---
-name: andrew-architecture-core
+name: architecture-core
 description: "Build Andrew-style architecture foundations before domain-specific design: frame the real problem, extract stable abstractions, choose data and storage shapes from dominant constraints, validate ideas with measurable POCs, and turn architecture topics into deliberate-practice loops. Use when the task is cross-domain architecture thinking, abstraction-first modeling, storage tradeoff analysis, executable design validation, or architecture skill-building."
 ---
 

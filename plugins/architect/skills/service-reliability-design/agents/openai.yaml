@@ -5,4 +5,4 @@
 interface:
   display_name: "Andrew Service Reliability Design"
   short_description: "SLO-driven quality, bottlenecks, throttling, and queue control"
-  default_prompt: "Use $andrew-service-reliability-design to design service-quality guarantees with explicit SLO/SLI decomposition, bottleneck protection, admission control, queue fairness, and operable monitoring."
+  default_prompt: "Use $service-reliability-design to design service-quality guarantees with explicit SLO/SLI decomposition, bottleneck protection, admission control, queue fairness, and operable monitoring."

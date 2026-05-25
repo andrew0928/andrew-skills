@@ -1,5 +1,5 @@
 ---
-name: andrew-api-distributed-design
+name: api-distributed-design
 description: "Design Andrew-style API and distributed-system contracts from domain lifecycle, message flow, and correctness guarantees. Use when Codex needs state-machine-driven API design, contract-first or API-first planning, service-to-service messaging, retry and idempotency design, queue or scheduler workflows, worker isolation choices, or measurable validation of ordering, latency, and duplicate-execution tradeoffs."
 ---
 

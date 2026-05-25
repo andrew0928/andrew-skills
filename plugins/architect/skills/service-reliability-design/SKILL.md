@@ -1,5 +1,5 @@
 ---
-name: andrew-service-reliability-design
+name: service-reliability-design
 description: "Design Andrew-style service reliability mechanisms from explicit SLOs, bottleneck analysis, load shaping, queue fairness, and operable metrics. Use when Codex needs to design service-quality guarantees, SLI/SLO decomposition, admission control, throttling, queue or lineup mechanisms, workload separation, observability-by-design, or operational controls that protect user experience under load."
 ---
 

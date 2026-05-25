@@ -25,8 +25,8 @@
 
 ```text
 ~/.codex/skills/
-  andrew-architecture-core/
-  andrew-api-distributed-design/
+  architecture-core/
+  api-distributed-design/
   ...
 ```
 

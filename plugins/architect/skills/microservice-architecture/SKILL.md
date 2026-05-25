@@ -1,5 +1,5 @@
 ---
-name: andrew-microservice-architecture
+name: microservice-architecture
 description: "Plan Andrew-style microservice architecture and migration by checking whether microservices truly fit, cutting service boundaries around real business responsibilities, evolving systems incrementally instead of rewriting, and engineering platform, runtime, and delivery capabilities as first-class architecture. Use when deciding whether to adopt microservices, decomposing a monolith, planning migration, choosing shared infrastructure, containerizing services, or defining the CI/CD and operability baseline needed to run many services safely."
 ---
 
