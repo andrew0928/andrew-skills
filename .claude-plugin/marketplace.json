@@ -1,14 +1,15 @@
 {
-  "name": "andrew-architect-skills",
+  "name": "andrew-skills",
+  "description": "Andrew Wu's Claude Code skills marketplace",
   "owner": {
     "name": "Andrew Wu",
     "url": "https://columns.chicken-house.net"
   },
   "plugins": [
     {
-      "name": "andrew-architect",
-      "source": "./",
-      "description": "Claude Skills for architecture design distilled from Andrew Wu's published articles",
+      "name": "architect",
+      "source": "./plugins/architect",
+      "description": "Architecture design skills distilled from Andrew Wu's published articles: architecture core, API & distributed design, security & permission, service reliability, and microservices.",
       "version": "0.1.0"
     }
   ]
