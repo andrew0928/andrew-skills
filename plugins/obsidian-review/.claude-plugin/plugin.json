@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-revision-marks",
-  "version": "0.1.0",
-  "description": "Track-changes style revision markers using Obsidian comment syntax (%%...%%) when editing existing Obsidian markdown content",
+  "name": "obsidian-review",
+  "version": "0.1.1",
+  "description": "Agent-assisted document editing in Obsidian — track changes, proofreading, review, and annotation workflows using inline revision markers (Obsidian comments or footnotes)",
   "author": {
     "name": "Andrew Wu",
     "email": "chicken@chicken-house.net",
@@ -14,6 +14,9 @@
     "markdown",
     "revision",
     "tracked-changes",
+    "proofreading",
+    "review",
+    "annotation",
     "editing-workflow"
   ]
 }

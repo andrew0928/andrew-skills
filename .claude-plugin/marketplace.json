@@ -13,10 +13,10 @@
       "version": "0.1.0"
     },
     {
-      "name": "obsidian-revision-marks",
-      "source": "./plugins/obsidian-revision-marks",
-      "description": "Track-changes style revision markers using Obsidian comment syntax (%%...%%) when editing existing Obsidian markdown content, so the user can review every change before accepting.",
-      "version": "0.1.0"
+      "name": "obsidian-review",
+      "source": "./plugins/obsidian-review",
+      "description": "Agent-assisted document editing in Obsidian — track changes, proofreading, review, and annotation workflows. Inline revision markers (Obsidian comments or footnotes) let the user review every change before accepting.",
+      "version": "0.1.1"
     }
   ]
 }
