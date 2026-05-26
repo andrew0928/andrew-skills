@@ -11,6 +11,12 @@
       "source": "./plugins/architect",
       "description": "Architecture design skills distilled from Andrew Wu's published articles: architecture core, API & distributed design, security & permission, service reliability, and microservices.",
       "version": "0.1.0"
+    },
+    {
+      "name": "obsidian-revision-marks",
+      "source": "./plugins/obsidian-revision-marks",
+      "description": "Track-changes style revision markers using Obsidian comment syntax (%%...%%) when editing existing Obsidian markdown content, so the user can review every change before accepting.",
+      "version": "0.1.0"
     }
   ]
 }
