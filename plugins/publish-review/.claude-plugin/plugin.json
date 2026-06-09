@@ -1,0 +1,27 @@
+{
+  "name": "publish-review",
+  "version": "0.1.0",
+  "description": "Review and structure content for external publication — drafted in Obsidian first, then reviewed before publishing. Covers talks/keynotes, long-form blog articles (~100k chars), and short social posts (~1k chars). Pillar-driven structure, positive assertive titles, format-appropriate length discipline, and clean working-doc vs release-deck separation.",
+  "author": {
+    "name": "Andrew Wu",
+    "email": "chicken@chicken-house.net",
+    "url": "https://columns.chicken-house.net"
+  },
+  "homepage": "https://columns.chicken-house.net",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "publishing",
+    "talk",
+    "presentation",
+    "keynote",
+    "blog",
+    "long-form",
+    "social-post",
+    "short-form",
+    "outline",
+    "narrative-structure",
+    "speaker-notes",
+    "content-strategy",
+    "obsidian"
+  ]
+}
