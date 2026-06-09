@@ -1,6 +1,6 @@
 ---
 name: obsidian-revision-marks
-description: "Mark revisions inline in existing Obsidian markdown files using either Obsidian comments (%%...%%) or footnotes (^[...] / [^rev-N]), so the user can review every change before accepting. Use whenever revising, restructuring, proofreading, reviewing, or annotating existing Obsidian markdown content — outlines, notes, drafts, articles, talk decks. Triggers on words like 調整, 修訂, 重新檢視, 改一下, 重新組織, 校稿, 校閱, 批注, revise, adjust, restructure, reorganize, proofread, review, annotate. Do NOT use when creating brand-new files from scratch, when the user explicitly says 直接改 不用標記, or when working on non-Obsidian markdown (the %%...%% syntax won't auto-hide there; footnotes still work in standard markdown but rendering varies)."
+description: "Mark revisions inline in existing Obsidian markdown files using either Obsidian comments (%%...%%) or footnotes ([^N] reference style preferred, ^[...] inline as alternative), so the user can review every change before accepting. Use whenever revising, restructuring, proofreading, reviewing, or annotating existing Obsidian markdown content — outlines, notes, drafts, articles, talk decks. Triggers on words like 調整, 修訂, 重新檢視, 改一下, 重新組織, 校稿, 校閱, 批注, revise, adjust, restructure, reorganize, proofread, review, annotate. Do NOT use when creating brand-new files from scratch, when the user explicitly says 直接改 不用標記, or when working on non-Obsidian markdown (the %%...%% syntax won't auto-hide there; footnotes still work in standard markdown but rendering varies)."
 ---
 
 # Obsidian 修訂/校閱標記慣例
@@ -14,7 +14,7 @@ description: "Mark revisions inline in existing Obsidian markdown files using ei
 | 模式 | 語法 | reading mode | 適合場景 | 接受後 |
 |---|---|---|---|---|
 | 註解 | `%%...%%` | **自動隱藏** | 修訂後要交付乾淨輸出 (簡報/文章/講稿) | regex 一次清除 |
-| 註腳 | `^[...]` / `[^rev-N]` | **顯示為上標連結** | 校稿/校閱/批注/評論, 想留下討論軌跡 | 保留作批注, 或選擇性清除 |
+| 註腳 | `[^N]` (參照, 推薦) / `^[...]` (行內) | **顯示為上標連結** | 校稿/校閱/批注/評論, 想留下討論軌跡 | 保留作批注, 或選擇性清除 |
 
 預設選擇:
 - 使用者說「修訂」「調整」「重新組織」→ 用**註解**模式 (清乾淨輸出)
@@ -100,90 +100,133 @@ Harness Engineering - 從工程師擴大到架構師
 
 ---
 
-## 模式 B: 註腳語法 `^[...]` / `[^rev-N]`
+## 模式 B: 註腳語法 `[^N]` (參照式, 推薦) / `^[...]` (行內式)
 
-**Obsidian 註腳, 閱讀模式顯示為上標連結** — 適合「校稿/批注/評論」的場景, 標記要可見, 想保留討論軌跡。
+**Obsidian 支援兩種註腳, 閱讀模式都顯示為上標連結, 點擊跳到註解內容** — 適合「校稿/批注/評論」, 想留下可見討論軌跡。
 
-### B1. 改寫的行 — 行內註腳
+兩種寫法:
+- **參照式 `[^N]`** (推薦, 一般文章/書籍註腳做法): 標記放行尾, 內容統一寫在文件末尾, source view 行尾乾淨, 多註解或長註解都好處理
+- **行內式 `^[...]`** (極短註解的替代): 內容直接跟在標記後, 不需要維護文末定義, 但行末容易很長, 也無法含 `]`
 
+預設用參照式; 註解很短且只有零星一兩處時可考慮行內式。同一份文件建議統一風格, 不要混用。
+
+### B1. 改寫的行 — 保留原文方便對照
+
+參照式 (推薦):
+```
+新內容 [^1]
+
+...文件其他內容...
+
+[^1]: [改] 原: "原文" - 改寫理由
+```
+
+範例:
+```
+- AI 重新定義 BizDevOps 的執行平衡 [^1]
+
+(文末)
+[^1]: [改] 原: "AI 改變了哪些流程與作業方法?" - 標題正面化
+```
+
+行內式 (極短註解可選):
 ```
 新內容 ^[改: 原 "原文" - 改寫理由]
 ```
 
-範例:
+### B2. 新增的單行 — 描述目的
+
+參照式 (推薦):
 ```
-- AI 重新定義 BizDevOps 的執行平衡 ^[改: 原 "AI 改變了哪些流程與作業方法?" - 標題正面化]
+新增的內容 [^2]
+
+(文末)
+[^2]: [新增] 新增理由
 ```
 
-### B2. 新增的單行 — 行內註腳
-
+行內式:
 ```
 新增的內容 ^[新增: 新增理由]
 ```
 
-範例:
+### B3. 新增的整段 (多行)
+
+參照式: 在段首行加註腳, 註腳定義可縮排延續多行
 ```
-- 瓶頸轉移到「架構師的邊界規劃能力」+「Core Context 的管理品質」 ^[新增: 預告答案, 收斂到後續兩大主軸]
-```
-
-### B3. 較長註解 / 內容含方括號 — 用參照註腳
-
-行內 `^[...]` 內不能含 `]`, 也不適合放多行說明。改用參照式:
-
-```
-新內容 [^rev-1]
-
-[^rev-1]: [改] 原: "原文太長放不下行尾, 或內容含 [方括號]"
-    理由可分行寫,
-    縮排 4 空白延續同一個註腳。
-```
-
-命名慣例: 用 `rev-N` 前綴 (`rev-1`, `rev-2`, ...) 避免跟使用者原有註腳衝突。也可以用更語意化的 label, 例如 `[^rev-title]`、`[^rev-intro]`。
-
-### B4. 新增的整段 (多行)
-
-註腳沒有開始/結束概念。兩種作法:
-
-**做法一**: 在段落首句加單一註腳註明範圍
-```
-首句 ^[新增段落 (共 3 段): 補充背景]
+首句 [^3]
 第二句
 第三句
+
+(文末)
+[^3]: [新增段落 (共 3 段)] 補充背景
+    縮排 4 空格 (或 1 個 tab) 延續同一個註腳, 可寫多行
+    每段都縮排, 直到下一個註腳定義或空白行
 ```
 
-**做法二**: 多行範圍改用模式 A 的 `%%[新增段落 開始]%%` ... `%%[新增段落 結束]%%`
-(範圍框得比較準, 即使主體用模式 B 也可以混用)
+或: 範圍較複雜時, 借模式 A 的 `%%[新增段落 開始]%%` ... `%%[新增段落 結束]%%` marker 框範圍 (邊界比較準, 即使主體用模式 B 也可以混用)
 
-### B5. 擬刪除的內容 — 保留原文, 標記擬刪除
+### B4. 擬刪除的內容 — 保留原文, 標記擬刪除
 
+參照式:
+```
+原本的行 [^4]
+
+(文末)
+[^4]: [擬刪除] 理由
+```
+
+行內式:
 ```
 原本的行 ^[擬刪除: 理由]
 ```
 
-多行擬刪除同 B4, 建議用模式 A 的開始/結束 marker 框範圍。
+多行擬刪除建議用模式 A 的開始/結束 marker 框範圍。
+
+### B5. 註腳定義位置與命名慣例
+
+**定義位置**: `[^N]: 內容` 統一放在文件最末尾, 跟主體內容用空白行隔開:
+
+```
+最後一段主體內容
+
+[^1]: 第一個註腳的內容
+[^2]: 第二個註腳的內容
+...
+```
+
+定義順序: 按註腳在文件中出現的順序排列 (跟編號一致), 方便對照。
+
+**命名慣例**: 開工前先 grep 一下 `\[\^` 看有沒有既有 footnote:
+
+- **無既有 footnote** → 用純數字 `[^1]`, `[^2]`, ... (一般文章/書籍做法, source view 短)
+- **有既有 footnote** → 用 `[^rev-N]` 前綴 (`[^rev-1]`, ...) 避免衝突, 也讓 revision 標記跟內容註腳明確區分
+- **改動位置明確的少量註腳** → 用語意化 label (`[^rev-title]`, `[^rev-intro]`, ...)
 
 ### 清除標記 (模式 B)
 
 完成校閱後三種選擇:
 
 1. **保留作批注** — 不清理, 留作文件的討論軌跡
-2. **全部接受變更** — 刪除所有 `^[...]`、`[^rev-*]` 標記、頁末 `[^rev-*]: ...` 定義行
+2. **全部接受變更** — 刪除所有 `[^N]`、`^[...]` 標記與文末 `[^N]: ...` 定義行
 3. **選擇性接受** — 逐一決定
 
 regex 清除 (VS Code 多行模式):
 ```
-\s*\^\[[^\]]*\]              # 行內註腳
-\s*\[\^rev-[^\]]+\]          # 參照標記
-^\[\^rev-[^\]]+\]:[\s\S]*?(?=\n\[\^|\n##|\Z)   # 註腳定義 (含縮排延續行)
+\s*\^\[[^\]]*\]                              # 行內註腳
+\s*\[\^[^\]]+\]                              # 參照標記 (數字 + rev- 都涵蓋)
+^\[\^[^\]]+\]:[\s\S]*?(?=\n\[\^|\n#|\Z)      # 註腳定義 (含縮排延續行)
 ```
 
 或 script:
 ```bash
 # 移除行內註腳
-sed -i.bak -E 's/\s*\^\[[^]]*\]//g' file.md
-# 移除參照標記與定義 (簡化版, 僅單行定義)
-sed -i.bak -E '/^\[\^rev-[^]]+\]:/d; s/\s*\[\^rev-[^]]+\]//g' file.md
+sed -i.bak -E 's/[[:space:]]*\^\[[^]]*\]//g' file.md
+
+# 移除參照標記與定義 (數字 + rev- 兩種命名都涵蓋)
+sed -i.bak -E '/^\[\^[0-9]+\]:|^\[\^rev-[^]]+\]:/d; s/[[:space:]]*\[\^[0-9]+\]//g; s/[[:space:]]*\[\^rev-[^]]+\]//g' file.md
 ```
+
+若文件有真實內容註腳 (非 revision 標記), 採用 `rev-N` 前綴後可用精準 regex 只清 `\[\^rev-` 系列。
 
 ---
 
