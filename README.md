@@ -36,6 +36,14 @@
 |--------|------|
 | [architect](plugins/architect/README.md) | 5 個架構設計 skills，涵蓋架構核心、API 與分散式、安全與權限、服務可靠度、微服務。 |
 
+## 專案範本
+
+[Andrew 專案開發規範](templates/AGENTS.andrew-project-template.md) 收錄決策紀錄、里程碑與任務管理，以及 Rust CLI 的 `clap`、`--help`、`--skill` 介面要求。複製範本到專案根目錄後，可在既有的 `AGENTS.md` 加入以下一行。這份範本採用 [MIT License](templates/LICENSE)。
+
+```markdown
+共通開發原則請參考 [Andrew 專案開發規範](AGENTS.andrew-project-template.md)。
+```
+
 ## Repo 結構
 
 ```text
